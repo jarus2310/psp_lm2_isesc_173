@@ -2,7 +2,7 @@
 #include<math.h>
 int main()
 {
-    float a,b,c,D,r1,r2,i;
+    float a,b,c,D,r1,r2,realpart,complexpart;
     printf("Enter the coefficients\n");
     scanf("%f%f%f",&a,&b,&c);
     D=b*b-4*a*c;
@@ -23,9 +23,9 @@ int main()
     else if (D<0)
     {
         printf("the roots are complex conjugates\n");
-        r1=(-b+sqrt(-D))/2*a;
-        r2=(-b-sqrt(-D))/2*a;
-        printf("the roots are %f and %f",r1,r2);
+        realpart=-b/2a;
+        complexpart=D/2a;
+        printf("the roots are %f+%fi and %f-%fi",realpart,complexpart,realpart,complexpart);
     }
     return 0;
 }
